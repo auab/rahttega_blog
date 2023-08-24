@@ -4,11 +4,10 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :summary %>
-    <%= f.label :content %>
-    <%= f.rich_text_area :content %>
+    <%= f.input_field :title, placeholder: "Título", class: "article-form__title-input" %>
+    <%= f.input_field :summary, placeholder: "Escrever uma epítome do texto, caso haja...", class: "article-form__summary-input" %>
     <%= f.input :photo, as: :file %>
+    <%= f.rich_text_area :content %>
   </div>
 
   <div class="form-actions">

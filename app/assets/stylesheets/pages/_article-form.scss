@@ -1,0 +1,31 @@
+.article-form__form-title{
+  font-size: 3.5rem;
+}
+
+.article-form__title-input {
+  background: none;
+  border: none;
+  font-size: 5.5rem;
+  color: white;
+  width: 100%;
+  &:focus{
+    outline: none;
+  }
+}
+
+.article-form__summary-input {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: white;
+  width: 100%;
+  &:focus{
+    outline: none;
+  }
+}
+
+
+// trix-toolbar .trix-button-group button {
+//   background-color: green;
+// }
