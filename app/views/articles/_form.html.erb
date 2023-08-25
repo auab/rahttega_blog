@@ -7,7 +7,9 @@
     <%= f.input_field :title, placeholder: "Título", class: "article-form__title-input" %>
     <%= f.input_field :summary, placeholder: "Escrever uma epítome do texto, caso haja...", class: "article-form__summary-input" %>
     <%= f.input :photo, as: :file %>
-    <%= f.rich_text_area :content %>
+    <div data-controller="trix-navbar">
+      <%= f.rich_text_area :content %>
+    </div>
   </div>
 
   <div class="form-actions">

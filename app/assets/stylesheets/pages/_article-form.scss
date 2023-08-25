@@ -29,3 +29,16 @@
 // trix-toolbar .trix-button-group button {
 //   background-color: green;
 // }
+
+
+trix-toolbar .trix-button--icon-code {
+  display: none;
+}
+
+trix-toolbar .trix-button--icon-quote {
+  display: none;
+}
+
+trix-toolbar .trix-button--icon-bold {
+  font-weight: bolder;
+}
