@@ -6,13 +6,13 @@
   <div class="form-inputs">
     <%= f.input_field :title, placeholder: "Título", class: "article-form__title-input" %>
     <%= f.input_field :summary, placeholder: "Escrever uma epítome do texto, caso haja...", class: "article-form__summary-input" %>
-    <%= f.input :photo, as: :file %>
+    <%= f.input :photo, as: :file, label:'Foto de Capa do Artigo', class: "article-form__photo-input"%>
     <div data-controller="trix-navbar">
-      <%= f.rich_text_area :content %>
+      <%= f.rich_text_area :content, placeholder: "Texto do artigo..." %>
     </div>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, "Salvar",class:"article-form__save-button mt-3" %>
   </div>
 <% end %>

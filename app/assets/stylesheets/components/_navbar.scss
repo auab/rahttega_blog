@@ -18,4 +18,19 @@
 
 .navbar-brand{
   color: #6b3fA0;
+  font-weight: bold;
+  &:hover{
+    text-decoration: underline;
+    color: #6b3fA0;
+  }
+}
+
+
+.navbar__new-article-button{
+  text-decoration: none;
+  color: #c0c0c0;
+  &:hover{
+    text-decoration: underline;
+    color: #ffffff;
+  }
 }

@@ -28,7 +28,7 @@ class ArticlesTest < ApplicationSystemTestCase
 
     fill_in "Body", with: @article.content
     fill_in "Title", with: @article.title
-    click_on "Update Article"
+    click_on "Salvar"
 
     assert_text "Article was successfully updated"
     click_on "Back"

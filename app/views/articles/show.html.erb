@@ -1,18 +1,19 @@
 <p style="color: green"><%= notice %></p>
 
-    <h3><%= @article.title %></h3>
-    <p><em><%= @article.summary %></em></p>
+    <h1 class="article-show__title mb-5"><%= @article.title %></h1>
+    <p class="article-show__summary"><%= @article.summary %></p>
     <div class="text-center">
       <% if @article.photo.attached?  %>
-          <%= cl_image_tag @article.photo.key, height: 300, width: 400, crop: :fill %>
+          <%= cl_image_tag @article.photo.key, width: 1200, crop: :fill %>
       <% end %>
     </div>
     <hr>
     <p><%= @article.content %>  </p>
 
-<div>
-  <%= link_to "Edit this article", edit_article_path(@article) %> |
-  <%= link_to "Back to articles", root_path %>
+<hr style="width:600px;margin-left:auto;margin-right:auto;">
 
-  <%= button_to "Destroy this article", @article, method: :delete %>
+<div class="article-form__secondary-links-div">
+  <%= link_to "Editar artigo", edit_article_path(@article), class: "article-form__secondary-links" %> |
+  <%= link_to "Voltar para artigos", root_path, class: "article-form__secondary-links" %> |
+  <%= link_to "Deletar artigo", @article, method: :delete, class: "article-form__secondary-links" %>
 </div>
