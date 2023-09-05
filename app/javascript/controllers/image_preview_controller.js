@@ -4,7 +4,7 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["input","preview"];
   connect() {
-    console.log("image previeww4");
+    console.log("image previeww5");
   }
 
   preview() {
