@@ -4,7 +4,7 @@
     <% if local_assigns[:in_gallery] %>
         <%= cl_image_tag blob.key, width: 800, c_limit: true %>
     <% else %>
-        <%= cl_image_tag blob.key, width: 1024, c_limit: true %>
+        <%= cl_image_tag blob.key, width:800, c_limit: true %>
     <% end %>
 
   <% end %>
@@ -13,8 +13,8 @@
     <% if caption = blob.try(:caption) %>
       <%= caption %>
     <% else %>
-      <span class="attachment__name"><%= blob.filename %></span>
-      <span class="attachment__size"><%= number_to_human_size blob.byte_size %></span>
+      <%# <span class="attachment__name"><%= blob.filename</span> %>
+      <%# <span class="attachment__size"><%= number_to_human_size blob.byte_size %><%#</span> %>
     <% end %>
   </figcaption>
 </figure>
