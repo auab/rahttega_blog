@@ -4,7 +4,7 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input_field :title, placeholder: "Título", class: "article-form__title-input" %>
+    <%= f.input_field :title, placeholder: "Título", class: "article-form__title-input article-show__title mb-5" %>
     <%= f.input_field :summary, placeholder: "Escrever uma epítome do texto, caso haja...", class: "article-form__summary-input" %>
     <div data-controller="image-preview">
       <%= f.input :photo, as: :file, input_html: {direct_upload: true, data: {image_preview_target:"input", action:"change->image-preview#preview"}}, label:'Foto de Capa do Artigo', class: "article-form__photo-input"%>
