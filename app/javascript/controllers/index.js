@@ -10,5 +10,5 @@ application.register("hello", HelloController)
 import ImagePreviewController from "./image_preview_controller"
 application.register("image-preview", ImagePreviewController)
 
-import TrixNavbarController from "./trix_navbar_controller"
-application.register("trix-navbar", TrixNavbarController)
+// import TrixNavbarController from "./trix_navbar_controller"
+// application.register("trix-navbar", TrixNavbarController)

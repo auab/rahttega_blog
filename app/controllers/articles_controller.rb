@@ -8,7 +8,6 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1 or /articles/1.json
   def show
-    raise
   end
 
   # GET /articles/new
