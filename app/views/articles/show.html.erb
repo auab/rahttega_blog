@@ -2,18 +2,23 @@
 
 
 <div class="article-content">
+
+      <%= link_to root_path, :class=>"article-show__goback-button" do %>
+        <i class="fa-solid fa-arrow-left"></i>  Voltar
+      <% end %>
+
+
       <div class="article-show__column-header">
         <h1 class="article-show__title mb-5"><%= @article.title %></h1>
         <p class="article-show__summary"><%= @article.summary %></p>
         <div class="text-center">
           <% if @article.photo.attached?  %>
-              <%= cl_image_tag @article.photo.key, width: 700, crop: :fill %>
+              <%= cl_image_tag @article.photo.key, width: 564, crop: :fill, :class =>"article-show__main-image" %>
           <% end %>
         <hr>
       </div>
       </div>
-      <div class="article-show__side-div"></div>
-      <div class="article-show__gap1-div"></div>
+
       <div class="article-show__content-div">
         <p><%= @article.content %>  </p>
           <hr style="width:100%;margin-left:auto;margin-right:auto;">
@@ -23,9 +28,7 @@
           <%= link_to "Deletar artigo", @article, method: :delete, class: "article-form__secondary-links" %>
         </div>
       </div>
-      <div class="article-show__gap2-div"></div>
-      <div class="article-show__rhs-div"></div>
-      <div class="article-show__gap3-div"></div>
+
 
 
 </div>
