@@ -2,10 +2,16 @@
 
 
 <div class="article-content">
+      <div class="article-show__goback-button-div">
+        <%= link_to root_path, :class=>"article-show__goback-button" do %>
+          <i class="fa-solid fa-arrow-left"></i>  Voltar
+        <% end %>
+      </div>
 
-      <%= link_to root_path, :class=>"article-show__goback-button" do %>
-        <i class="fa-solid fa-arrow-left"></i>  Voltar
-      <% end %>
+      <div class="article-show__category-date-div">
+        <span class="article-show__category-tag"><%= Category.find(@article.category_id).title %></span>
+        <span class="article-show__date-tag"><%= @article.creation_date.strftime('%d.%m.%Y') %></span>
+      </div>
 
 
       <div class="article-show__column-header">

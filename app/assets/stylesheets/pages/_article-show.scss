@@ -4,14 +4,39 @@
   margin-right: auto;
 }
 
+
+.article-show__goback-button-div{
+  margin-bottom: 43px;
+}
+
+.article-show__category-tag{
+  background-color: $gold;
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 1px 15px;
+  border-radius: 20px;
+}
+
+.article-show__date-tag{
+  color: rgba(255, 255, 255, 0.404);
+  font-weight: bold;
+  font-size: 20px;
+  padding: 4px 15px;
+  border-radius: 1px;
+}
+
+.article-show__category-date-div{
+  margin-bottom: 24px;
+}
+
 .article-show__goback-button{
   font-size: 18px;
   color: $light-purple;
-  text-decoration: none !important;
+  text-decoration: none;
   &:hover{
     color: $purple;
   }
-
 }
 
 .article-show__title{
