@@ -4,6 +4,10 @@ class ArticlesController < ApplicationController
   # GET /articles or /articles.json
   def index
     @articles = Article.all
+    @categories = Category.all
+    @main_article = Article.last
+    @category_id = params["category_id"]
+    @articles = Article.where(category_id: @category_id) if params["category_id"]
   end
 
   # GET /articles/1 or /articles/1.json

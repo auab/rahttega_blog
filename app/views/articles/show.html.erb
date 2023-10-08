@@ -19,7 +19,7 @@
         <p class="article-show__summary"><%= @article.summary %></p>
         <div class="text-center">
           <% if @article.photo.attached?  %>
-              <%= cl_image_tag @article.photo.key, width: 564, crop: :fill, :class =>"article-show__main-image" %>
+              <%= cl_image_tag @article.photo.key, width: 422, crop: :fill, :class =>"article-show__main-image" %>
           <% end %>
         <hr>
       </div>

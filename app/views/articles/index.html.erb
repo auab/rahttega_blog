@@ -1,13 +1,61 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Articles</h1>
+<h1>Artigos</h1>
 
-<div id="articles">
+  <div class="article-index__categories-div">
+    <div class= <%= (@category_id)? "article-index__category-tag-button" : "article-index__category-tag-button--selected"  %>>
+    <%= link_to root_path do %>
+      Todos os Artigos
+    <% end %>
+    </div>
+    <% @categories.each do |category| %>
+    <div class= <%= (@category_id == category.id.to_s)? "article-index__category-tag-button--selected" : "article-index__category-tag-button" %>>
+      <%= link_to root_path(category_id: category.id) do %>
+        <span><%= category.title %></span>
+      <% end %>
+    </div>
+    <%end%>
+  </div>
+
+<div class="main-article__div">
+  <div class="main-article__text-div">
+    <h2><%= @main_article.title %></h2>
+    <p class = "main-article_summary-text"><%= @main_article.summary %></p>
+    <div class="article-show__goback-button-div">
+      <%= link_to @main_article, :class=>"article-show__goback-button" do %>
+        Ler agora <i class="fa-solid fa-arrow-right"></i>
+      <% end %>
+    </div>
+  </div>
+  <div class="main-article__photo-div">
+    <% if @main_article.photo.attached?  %>
+        <%= cl_image_tag @main_article.photo.key, width: 564, crop: :fill, :class =>"article-show__main-image" %>
+    <% end %>
+  </div>
+</div>
+
+<div class="articles-index__all-articles-div">
+
+
+
   <% @articles.each do |article| %>
-    <h3><%= article.title %></h3>
-    <p><em><%= article.summary %></em></p>
-    <p>
-      <%= link_to "Continuar lendo", article %>
-    </p>
+
+    <div class="article-card__card-div">
+      <% if article.photo.attached?  %>
+          <%= cl_image_tag article.photo.key, width: 243, crop: :fill, :class =>"article-show__main-image" %>
+      <% end %>
+      <div class="article-card__text-div">
+      <h3><%= article.title %></h3>
+      <div class="article-card__category-tag-div">
+        <span ><%= (Category.where(id: article.category_id))[0].title %></span>
+      </div>
+
+
+        <%= link_to article, :class=>"article-show__goback-button" do %>
+          Ler agora <i class="fa-solid fa-arrow-right"></i>
+        <% end %>
+      </div>
+    </div>
+
   <% end %>
 </div>
