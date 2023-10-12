@@ -59,7 +59,11 @@
   }
 }
 
-
+.articles-index__all-articles-div{
+  display: flex;
+  gap: 80px;
+  margin-bottom: 100px;
+}
 
 // Article Cards
 .article-card__card-div{

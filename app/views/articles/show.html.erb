@@ -1,40 +1,45 @@
 <p style="color: green"><%= notice %></p>
 
-
 <div class="article-content">
+  <div class="article-show__shortcuts-div">
+    <div class="article-show__goback-button-div">
+      <%= link_to root_path, :class=>"article-show__goback-button" do %>
+        <i class="fa-solid fa-arrow-left"></i>  Voltar
+      <% end %>
+    </div> <!--article-show__goback-button-div-->
+    <div class="article-show__editor-div">
       <div class="article-show__goback-button-div">
-        <%= link_to root_path, :class=>"article-show__goback-button" do %>
-          <i class="fa-solid fa-arrow-left"></i>  Voltar
+        <%= link_to edit_article_path(@article), :class=>"article-show__editor-button" do %>
+          <i class="fa-solid fa-pencil fa-lg" style="color: #dedede;"></i>
         <% end %>
-      </div>
+      </div><!--article-show__goback-button-div-->
+      <div class="article-show__goback-button-div">
+        <%= link_to @article, method: :delete, :class=>"article-show__editor-button" do %>
+          <i class="fa-solid fa-trash fa-lg" style="color: #dedede;"></i>
+        <% end %>
+      </div><!--article-show__goback-button-div-->
+    </div><!--article-show__editor-div-->
+  </div><!--article-show__shortcuts-div-->
 
-      <div class="article-show__category-date-div">
-        <span class="article-show__category-tag"><%= Category.find(@article.category_id).title %></span>
-        <span class="article-show__date-tag"><%= @article.creation_date.strftime('%d.%m.%Y') %></span>
-      </div>
+  <div class="article-show__category-date-div">
+    <span class="article-show__category-tag"><%= Category.find(@article.category_id).title %></span>
+    <span class="article-show__date-tag"><%= @article.creation_date.strftime('%d.%m.%Y') %></span>
+  </div><!--article-show__category-date-div-->
 
+  <div class="article-show__column-header">
+    <h1 class="article-show__title mb-5"><%= @article.title %></h1>
+    <p class="article-show__summary"><%= @article.summary %></p>
+    <div class="text-center">
+      <% if @article.photo.attached?  %>
+        <%= cl_image_tag @article.photo.key, width: 422, crop: :fill, :class =>"article-show__main-image" %>
+      <% end %>
+      <hr>
+    </div><!--text-center-->
+  </div><!--article-show__column-header-->
 
-      <div class="article-show__column-header">
-        <h1 class="article-show__title mb-5"><%= @article.title %></h1>
-        <p class="article-show__summary"><%= @article.summary %></p>
-        <div class="text-center">
-          <% if @article.photo.attached?  %>
-              <%= cl_image_tag @article.photo.key, width: 422, crop: :fill, :class =>"article-show__main-image" %>
-          <% end %>
-        <hr>
-      </div>
-      </div>
+  <div class="article-show__content-div">
+    <p><%= @article.content %>  </p>
+      <hr style="width:100%;margin-left:auto;margin-right:auto;">
+  </div><!--article-show__content-div-->
 
-      <div class="article-show__content-div">
-        <p><%= @article.content %>  </p>
-          <hr style="width:100%;margin-left:auto;margin-right:auto;">
-          <div class="article-form__secondary-links-div">
-          <%= link_to "Editar artigo", edit_article_path(@article), class: "article-form__secondary-links" %> |
-          <%= link_to "Voltar para artigos", root_path, class: "article-form__secondary-links" %> |
-          <%= link_to "Deletar artigo", @article, method: :delete, class: "article-form__secondary-links" %>
-        </div>
-      </div>
-
-
-
-</div>
+</div><!--article-content-->

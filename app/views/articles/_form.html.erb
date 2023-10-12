@@ -4,21 +4,26 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input_field :title, placeholder: "Título", class: "article-form__title-input article-show__title mb-5" %>
+  <h3 class="article-form__label">Título</h3>
+    <%= f.input_field :title, placeholder: "Título", class: "article-form__title-input article-show__title mb-5",input_html: {class:"article-form__title-input"}  %>
+    <h3 class="article-form__label">Epítome</h3>
     <%= f.input_field :summary, placeholder: "Escrever uma epítome do texto, caso haja...", class: "article-form__summary-input" %>
     <div data-controller="image-preview">
-      <%= f.input :photo, as: :file, input_html: {direct_upload: true, data: {image_preview_target:"input", action:"change->image-preview#preview"}}, label:'Foto de Capa do Artigo', class: "article-form__photo-input"%>
+      <%= f.input :photo, as: :file, input_html: {direct_upload: true, data: {image_preview_target:"input", action:"change->image-preview#preview"},class:"article-form__photo-input"}, label:'Foto de Capa', label_html:{class:"article-form__label"}%>
       <% if @article.photo.attached? %>
-      <%= cl_image_tag @article.photo.key,data: {image_preview_target:"preview"} ,width: 700, crop: :fill %>
+      <%= cl_image_tag @article.photo.key,data: {image_preview_target:"preview"} ,width: 564, crop: :fill %>
         <% else %>
       <% end %>
-    </div>
+    </div><!--image-preview-->
+    <h3 class="article-form__label">Data de Publicação</h3>
     <%= f.input_field :creation_date, as: :date, html5: true%>
+    <h3 class="article-form__label">Categoria</h3>
     <%= f.input_field :category_id, collection: Category.all.map {|category| ["#{category.title}", category.id.to_i]}%>
+    <h3 class="article-form__label">Texto do artigo</h3>
     <div data-controller="trix-navbar">
       <%= f.rich_text_area :content, placeholder: "Texto do artigo..." %>
-    </div>
-  </div>
+    </div><!--trix-navbar-->
+  </div><!--form-inputs-->
 
   <div class="form-actions">
     <%= f.button :submit, "Salvar",class:"article-form__save-button mt-3" %>

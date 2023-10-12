@@ -73,3 +73,14 @@
   display: block;
   margin-bottom: 2rem;
 }
+
+
+.article-show__shortcuts-div{
+  display: flex;
+  justify-content: space-between;
+}
+
+.article-show__editor-div{
+  display: flex;
+  gap: 25px;
+}
