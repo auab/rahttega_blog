@@ -25,13 +25,14 @@
 
 
 #article_content{
-  width: 824px;
+  width: 564px;
   margin-left: auto;
   margin-right: auto;
-  border-left: 8px solid #7a57d1;
-  padding-left: 10px;
-  padding-right: 0px;
+  border: 1px solid #7a57d1;
+  padding-left: 2px;
+  padding-right: 2px;
   color: #c0c0c0;
+  border-radius: 10px;
 }
 
 
@@ -48,6 +49,27 @@
     color: #d4af37;
   }
 }
+
+.article-form__label{
+  font-size: 30px;
+  margin-top: 30px;
+  border-bottom: 1px solid white;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.article-form__photo-input{
+  width: 125px!important;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.article-form__title-input{
+  color: white;
+  width: 100%;
+}
+
 
 
 trix-toolbar .trix-button--icon-code {
@@ -111,6 +133,9 @@ trix-toolbar .trix-button--icon-strike {
   display: flex;
   justify-content: center;
   column-gap: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 16px;
 }
 
 
@@ -137,4 +162,16 @@ trix-toolbar .trix-button--icon-strike {
 
 .attachment{
   margin:30px 0px 20px 0;
+}
+
+
+.form-inputs{
+  width: 564px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.trix-editor__youtube-thumb-div{
+  margin-left: auto;
+  margin-right: auto;
 }

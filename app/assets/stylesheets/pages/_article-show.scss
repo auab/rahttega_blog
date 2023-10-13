@@ -1,61 +1,66 @@
 .article-content{
-  display: grid;
-  grid-template-areas:
-        "... ... .... title .... ... .... ..."
-        "... toc gap1 content gap2 rhs gap3 ...";
-  grid-template-columns: 1fr minmax(200px,270px) minmax(0,100px) minmax(min-content,720px) minmax(0,100px) min-content 10px 1.5fr;
+  width: 564px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.article-show__column-header{
-  grid-area: title;
-}
-.article-show__side-div{
-  grid-area: toc;
-}
-.article-show__gap1-div{
-  grid-area: gap1;
+
+.article-show__goback-button-div{
+  margin-bottom: 43px;
 }
 
-.article-show__gap2-div{
-  grid-area: gap2;
-}
-.article-show__gap3-div{
-  grid-area: gap3;
-}
-.article-show__content-div{
-  grid-area: content;
-}
-.article-show__rhs-div{
-  grid-area: rhs;
+.article-show__category-tag{
+  background-color: $gold;
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 1px 15px;
+  border-radius: 20px;
 }
 
+.article-show__date-tag{
+  color: rgba(255, 255, 255, 0.404);
+  font-weight: bold;
+  font-size: 20px;
+  padding: 4px 15px;
+  border-radius: 1px;
+}
+
+.article-show__category-date-div{
+  margin-bottom: 24px;
+}
+
+.article-show__goback-button{
+  font-size: 18px;
+  color: $light-purple;
+  text-decoration: none;
+  &:hover{
+    color: $purple;
+  }
+}
+
+.article-show__title{
+  font-size: 40px;
+}
 
 .trix-content {
-  width: 700px;
+  width: 564px;
   font-size: 1.4rem;
   margin-left: auto;
   margin-right: auto;
-
-  // padding-left: 10px;
-  // padding-right: 0px;
   color: #c0c0c0;
 }
 
 
-.article-show__title{
-  font-size: 3rem;
-  color: #d4af37;
-}
 
 .article-show__summary{
   color: #c0c0c0;
-  font-style: italic;
   font-size: 1.4rem;
   line-height: 2rem;
-  width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
+}
+
+.article-show__main-image{
+  border-radius: 5px;
 }
 
 .attachment__caption{
@@ -67,4 +72,15 @@
 .br {
   display: block;
   margin-bottom: 2rem;
+}
+
+
+.article-show__shortcuts-div{
+  display: flex;
+  justify-content: space-between;
+}
+
+.article-show__editor-div{
+  display: flex;
+  gap: 25px;
 }

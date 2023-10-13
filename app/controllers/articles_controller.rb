@@ -4,6 +4,10 @@ class ArticlesController < ApplicationController
   # GET /articles or /articles.json
   def index
     @articles = Article.all
+    @categories = Category.all
+    @main_article = Article.last
+    @category_id = params["category_id"]
+    @articles = Article.where(category_id: @category_id) if params["category_id"]
   end
 
   # GET /articles/1 or /articles/1.json
@@ -61,6 +65,6 @@ class ArticlesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def article_params
-      params.require(:article).permit(:title, :content, :summary, :photo)
+      params.require(:article).permit(:title, :content, :summary, :photo, :creation_date, :category_id)
     end
 end
