@@ -1,8 +1,6 @@
-.article-form__form-title{
-  font-size: 3.5rem;
-}
-
 .article-form__title-input {
+  color: white;
+  width: 100%;
   background: none;
   border: none;
 
@@ -22,7 +20,6 @@
     outline: none;
   }
 }
-
 
 #article_content{
   width: 564px;
@@ -59,19 +56,11 @@
 }
 
 .article-form__photo-input{
-  width: 125px!important;
+  width: 125px;
   margin-left: auto;
   margin-right: auto;
 
 }
-
-.article-form__title-input{
-  color: white;
-  width: 100%;
-}
-
-
-
 trix-toolbar .trix-button--icon-code {
   display: none;
 }
@@ -136,11 +125,6 @@ trix-toolbar .trix-button--icon-strike {
   margin-left: auto;
   margin-right: auto;
   font-size: 16px;
-}
-
-
-.article-form__photo-input{
-  width: 340px;
 }
 
 .trix-dialogs{
