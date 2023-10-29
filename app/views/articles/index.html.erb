@@ -1,35 +1,19 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Artigos</h1>
 
-  <div class="article-index__categories-div">
-    <div class= <%= (@category_id)? "article-index__category-tag-button" : "article-index__category-tag-button--selected"  %>>
-    <%= link_to root_path do %>
-      Todos os Artigos
-    <% end %>
-    </div>
-    <% @categories.each do |category| %>
-    <div class= <%= (@category_id == category.id.to_s)? "article-index__category-tag-button--selected" : "article-index__category-tag-button" %>>
-      <%= link_to root_path(category_id: category.id) do %>
-        <span><%= category.title %></span>
-      <% end %>
-    </div>
-    <%end%>
-  </div>
 
-<div class="main-article__div">
+
+<div class="main-article__div w-full-a m-auto">
   <div class="main-article__text-div">
     <h2><%= @main_article.title %></h2>
-    <p class = "main-article_summary-text"><%= @main_article.summary %></p>
-    <div class="article-show__goback-button-div">
+    <p class = "text-base"><%= @main_article.summary %></p>
       <%= link_to @main_article, :class=>"article-show__goback-button" do %>
         Ler agora <i class="fa-solid fa-arrow-right"></i>
       <% end %>
-    </div>
   </div>
   <div class="main-article__photo-div">
     <% if @main_article.photo.attached?  %>
-        <%= cl_image_tag @main_article.photo.key, width: 564, crop: :fill, :class =>"article-show__main-image" %>
+        <%= cl_image_tag @main_article.photo.key, width: 564, crop: :fill, :class =>"rounded-md" %>
     <% end %>
   </div>
 </div>
@@ -42,7 +26,7 @@
 
     <div class="article-card__card-div">
       <% if article.photo.attached?  %>
-          <%= cl_image_tag article.photo.key, width: 243, crop: :fill, :class =>"article-show__main-image" %>
+          <%= cl_image_tag article.photo.key, width: 243, crop: :fill, :class =>"rounded-md" %>
       <% end %>
       <div class="article-card__text-div">
       <h3><%= article.title %></h3>

@@ -1,9 +1,9 @@
-<h1 class="article-form__form-title mb-5">Editar Artigo</h1>
+<h1 class="text-6xl mb-5">Editar Artigo</h1>
 
 <div class="article-form__secondary-links-div">
 
   <%= link_to "Voltar para artigo", @article, class: "article-form__secondary-links"%> |
-  <%= link_to "Todos os artigos", root_path , class: "article-form__secondary-links"%>
+  <%= link_to "Todos os artigos", articles_path , class: "article-form__secondary-links"%>
 </div><!--article-form__secondary-links-div-->
 <%= render "form", article: @article %>
 

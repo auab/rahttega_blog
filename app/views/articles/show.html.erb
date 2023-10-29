@@ -1,37 +1,31 @@
 <p style="color: green"><%= notice %></p>
-
 <div class="article-content">
   <div class="article-show__shortcuts-div">
-    <div class="article-show__goback-button-div">
-      <%= link_to root_path, :class=>"article-show__goback-button" do %>
+    <div class="mb-11">
+      <%= link_to articles_path, :class=>"article-show__goback-button" do %>
         <i class="fa-solid fa-arrow-left"></i>  Voltar
       <% end %>
-    </div> <!--article-show__goback-button-div-->
-    <div class="article-show__editor-div">
-      <div class="article-show__goback-button-div">
+    </div> <!-- mb-11 -->
+    <div class="flex gap-6">
         <%= link_to edit_article_path(@article), :class=>"article-show__editor-button" do %>
           <i class="fa-solid fa-pencil fa-lg" style="color: #dedede;"></i>
         <% end %>
-      </div><!--article-show__goback-button-div-->
-      <div class="article-show__goback-button-div">
         <%= link_to @article, method: :delete, :class=>"article-show__editor-button" do %>
           <i class="fa-solid fa-trash fa-lg" style="color: #dedede;"></i>
         <% end %>
-      </div><!--article-show__goback-button-div-->
-    </div><!--article-show__editor-div-->
+    </div><!--flex gap-6-->
   </div><!--article-show__shortcuts-div-->
-
-  <div class="article-show__category-date-div">
+  <div class="mb-6">
     <span class="article-show__category-tag"><%= Category.find(@article.category_id).title %></span>
     <span class="article-show__date-tag"><%= @article.creation_date.strftime('%d.%m.%Y') %></span>
-  </div><!--article-show__category-date-div-->
+  </div><!--mb-6-->
 
   <div class="article-show__column-header">
-    <h1 class="article-show__title mb-5"><%= @article.title %></h1>
+    <h1 class="text-4xl mb-5"><%= @article.title %></h1>
     <p class="article-show__summary"><%= @article.summary %></p>
     <div class="text-center">
       <% if @article.photo.attached?  %>
-        <%= cl_image_tag @article.photo.key, width: 422, crop: :fill, :class =>"article-show__main-image" %>
+        <%= cl_image_tag @article.photo.key, width: 422, crop: :fill, :class =>"rounded-md" %>
       <% end %>
       <hr>
     </div><!--text-center-->

@@ -4,11 +4,6 @@
   margin-right: auto;
 }
 
-
-.article-show__goback-button-div{
-  margin-bottom: 43px;
-}
-
 .article-show__category-tag{
   background-color: $gold;
   color: black;
@@ -26,9 +21,6 @@
   border-radius: 1px;
 }
 
-.article-show__category-date-div{
-  margin-bottom: 24px;
-}
 
 .article-show__goback-button{
   font-size: 18px;
@@ -37,10 +29,6 @@
   &:hover{
     color: $purple;
   }
-}
-
-.article-show__title{
-  font-size: 40px;
 }
 
 .trix-content {
@@ -59,9 +47,6 @@
   line-height: 2rem;
 }
 
-.article-show__main-image{
-  border-radius: 5px;
-}
 
 .attachment__caption{
   text-align: center;

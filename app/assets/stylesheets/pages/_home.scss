@@ -4,4 +4,30 @@ body{
   background-color: black;
   font-family:"EB Garamond";
   font-size: 13px;
+  min-height: 100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+.content-part{
+  flex:1;
+}
+
+
+
+footer{
+  background: rgb(0,0,0);
+  background: linear-gradient(0deg, rgba(0,0,0,1) 94%, rgba(138,138,138,1) 100%);
+}
+
+h1{
+  font-size: 48px;
+}
+
+h2{
+  font-size: 40px;
+}
+
+h3{
+  font-size: 36px;
 }

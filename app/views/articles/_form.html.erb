@@ -4,22 +4,22 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-  <h3 class="article-form__label">Título</h3>
-    <%= f.input_field :title, placeholder: "Título", class: "article-form__title-input article-show__title mb-5",input_html: {class:"article-form__title-input"}  %>
-    <h3 class="article-form__label">Epítome</h3>
+  <h3 class=" text-gray-600 border-b text-2xl border-gray-600 mt-10 mb-2">Título</h3>
+    <%= f.input_field :title, placeholder: "Título", class: "article-form__title-input text-4xl",input_html: {class:"article-form__title-input"}  %>
+    <h3 class="text-gray-600 border-b text-2xl border-gray-600 mt-10 mb-2">Epítome</h3>
     <%= f.input_field :summary, placeholder: "Escrever uma epítome do texto, caso haja...", class: "article-form__summary-input" %>
-    <div data-controller="image-preview">
-      <%= f.input :photo, as: :file, input_html: {direct_upload: true, data: {image_preview_target:"input", action:"change->image-preview#preview"},class:"article-form__photo-input"}, label:'Foto de Capa', label_html:{class:"article-form__label"}%>
+    <div data-controller="image-preview" class="mt-10 text-center">
+      <%= f.input :photo, as: :file, input_html: {direct_upload: true, data: {image_preview_target:"input", action:"change->image-preview#preview"},class:"article-form__photo-input"}, label:'Foto de Capa', label_html:{class:"bg-purple-900 p-3 rounded-md mb-3"}%>
       <% if @article.photo.attached? %>
       <%= cl_image_tag @article.photo.key,data: {image_preview_target:"preview"} ,width: 564, crop: :fill %>
         <% else %>
       <% end %>
     </div><!--image-preview-->
-    <h3 class="article-form__label">Data de Publicação</h3>
-    <%= f.input_field :creation_date, as: :date, html5: true%>
-    <h3 class="article-form__label">Categoria</h3>
-    <%= f.input_field :category_id, collection: Category.all.map {|category| ["#{category.title}", category.id.to_i]}%>
-    <h3 class="article-form__label">Texto do artigo</h3>
+    <h3 class="text-gray-600 border-b text-2xl border-gray-600 mt-10 mb-2">Data de Publicação</h3>
+    <%= f.input_field :creation_date, as: :date, html5: true,class:"bg-black rounded-xl w-32 text-center"%>
+    <h3 class="text-gray-600 border-b text-2xl border-gray-600 mt-10 mb-2">Categoria</h3>
+    <%= f.input_field :category_id, class:"bg-black rounded-xl w-32 text-center mb-2", collection: Category.all.map {|category| ["#{category.title}", category.id.to_i]}%>
+    <h3 class="text-gray-600 border-b text-2xl border-gray-600 mt-10 mb-2">Texto do artigo</h3>
     <div data-controller="trix-navbar">
       <%= f.rich_text_area :content, placeholder: "Texto do artigo..." %>
     </div><!--trix-navbar-->
