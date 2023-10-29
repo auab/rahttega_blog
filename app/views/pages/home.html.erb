@@ -1,2 +1,61 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<!--Area do Título-->
+<div class="flex w-full-a justify-between bg-gray-900 p-4 rounded-lg m-auto">
+  <div>
+    <%= image_tag "rattegabranco.png", style:"width:300px;"%>
+    <p>Artigos sobre luz e sombras, sobre nada e tudo</p>
+    <%= link_to articles_path, :class=>"article-show__goback-button" do %>
+        Ver Artigos
+    <% end %>
+  </div>
+  <div>
+    <%= image_tag "bookshelf.jpg",style:"width:500px;",class:"grayscale"%>
+  </div>
+</div>
+
+
+
+
+
+<!--Artigos Mais Recentes-->
+<h2 class="text-center mt-24">Textos mais recentes</h2>
+
+<% unless @articles[0].nil? %>
+  <div class="flex w-full-a justify-between p-8 m-auto items-center">
+    <div class="w-2/5">
+      <h3><%= @articles[0].title %></h3>
+      <p><%= @articles[0].summary %></p>
+    </div>
+    <div>
+      <% if @articles[0].photo.attached?  %>
+        <%= cl_image_tag @articles[0].photo.key, width: 461, crop: :fill, :class =>"rounded-md" %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
+<% unless @articles[1].nil? %>
+  <div class="flex w-full-a justify-between p-8 m-auto items-center">
+    <div>
+      <% if @articles[1].photo.attached?  %>
+        <%= cl_image_tag @articles[1].photo.key, width: 461, crop: :fill, :class =>"rounded-md" %>
+      <% end %>
+    </div>
+    <div class="w-2/5">
+      <h3><%= @articles[1].title %></h3>
+      <p><%= @articles[1].summary %></p>
+    </div>
+  </div>
+<% end %>
+<% unless @articles[2].nil? %>
+  <div class="flex w-full-a justify-between p-8 m-auto items-center">
+    <div class="w-2/5">
+      <h3><%= @articles[2].title %></h3>
+      <p><%= @articles[2].summary %></p>
+    </div>
+    <div>
+      <% if @articles[2].photo.attached?  %>
+        <%= cl_image_tag @articles[2].photo.key, width: 461, crop: :fill, :class =>"rounded-md" %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

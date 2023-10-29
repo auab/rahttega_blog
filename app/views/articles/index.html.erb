@@ -1,23 +1,9 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Artigos</h1>
 
-  <div class="article-index__categories-div">
-    <div class= <%= (@category_id)? "article-index__category-tag-button" : "article-index__category-tag-button--selected"  %>>
-    <%= link_to root_path do %>
-      Todos os Artigos
-    <% end %>
-    </div>
-    <% @categories.each do |category| %>
-    <div class= <%= (@category_id == category.id.to_s)? "article-index__category-tag-button--selected" : "article-index__category-tag-button" %>>
-      <%= link_to root_path(category_id: category.id) do %>
-        <span><%= category.title %></span>
-      <% end %>
-    </div>
-    <%end%>
-  </div>
 
-<div class="main-article__div">
+
+<div class="main-article__div w-full-a m-auto">
   <div class="main-article__text-div">
     <h2><%= @main_article.title %></h2>
     <p class = "text-base"><%= @main_article.summary %></p>
